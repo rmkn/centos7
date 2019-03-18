@@ -2,7 +2,7 @@ FROM centos:7
 LABEL maintainer "rmkn"
 
 RUN localedef -i ja_JP -f UTF-8 ja_JP.utf8
-RUN sed -i -e "s/^LANG=.*$/LANG=ja_JP.utf8/" /etc/locale.conf
+RUN sed -i -e '/^LANG=/s/=.*$/=ja_JP.utf8/' /etc/locale.conf 
 RUN ln -sf /usr/share/zoneinfo/Japan /etc/localtime 
 
 RUN sed -i -e "/override_install_langs/s/$/,ja_JP.utf8/" /etc/yum.conf
