@@ -10,7 +10,7 @@ RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 RUN yum -y clean all
 RUN yum -y update
 
-RUN rpm --import http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
 RUN yum -y install epel-release
+RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
 
 RUN yum -y clean all
